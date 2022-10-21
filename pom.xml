@@ -126,4 +126,21 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>learn:social-media</id>
+			<name>Social Media Project for self learning</name>
+			<url>scp://repo/maven2</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>learn:social-media</id>
+			<name>Social Media Project for self learning</name>
+			<url>sftp://propellers.net/maven</url>
+			<layout>default</layout>
+		</snapshotRepository>
+	</distributionManagement>
+
 </project>
