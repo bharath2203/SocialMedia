@@ -14,4 +14,6 @@ jobs:
           chmod a+x ~/auto
 
       - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ~/auto shipit
