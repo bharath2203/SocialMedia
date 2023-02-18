@@ -1,6 +1,8 @@
 name: Release
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   release:
@@ -8,12 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: download intuit/auto
-        run: |
-          curl -vkL -o - https://github.com/intuit/auto/releases/download/v10.28.0/auto-linux.gz | gunzip > ~/auto
-          chmod a+x ~/auto
+      - uses: auto-it/setup-auto@v1
 
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ~/auto shipit
+        run: auto shipit
