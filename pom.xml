@@ -82,6 +82,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>io.github.deweyjose</groupId>
 				<artifactId>graphqlcodegen-maven-plugin</artifactId>
@@ -103,7 +104,43 @@
 					<writeToFiles>true</writeToFiles>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>learn:social-media</id>
+			<name>Social Media Project for self learning</name>
+			<url>scp://repo/maven2</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>learn:social-media</id>
+			<name>Social Media Project for self learning</name>
+			<url>sftp://propellers.net/maven</url>
+			<layout>legacy</layout>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
