@@ -1,4 +1,10 @@
 {
-  "author": "Bharath G R <bharathgr2203@gmail.com>",
-  "plugins": ["maven"]
+  "plugins": [
+    "maven"
+  ],
+  "owner": "bharath2203",
+  "repo": "SocialMedia",
+  "name": "bharathgr2203",
+  "email": "bharathgr2203@gmail.com",
+  "onlyPublishWithReleaseLabel": true
 }
